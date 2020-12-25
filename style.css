@@ -115,8 +115,8 @@ img {
 .phone {
 	width: 300px;
 	height: 600px;
-	padding: .75em;
-	background: var(--white);
+	background: var(--lightGrayishViolet);
+	border: .75em solid var(--white);
 	border-radius: 1em;
 	box-shadow: 0 30px 40px rgba(0,0,0,.3);
 	overflow: hidden;
@@ -124,7 +124,7 @@ img {
 
 .phone .header {
 	background: linear-gradient(190deg, var(--lightMagenta) 0%, var(--lightViolet) 100%);
-	border-radius: 1em 1em .2em .2em;
+	border-radius: .75em .75em .2em .2em;
 }
 
 .phone .header:before {
