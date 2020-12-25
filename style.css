@@ -6,6 +6,7 @@ html {
 	-ms-text-size-adjust: 100%;
 	box-sizing: border-box;
 	font-family: 'Rubik', sans-serif;
+	background: var(--lightGrey);
 }
 
 *, *:before, *:after {
@@ -45,11 +46,106 @@ img {
 	/*secondary*/
 	--white: hsl(0, 0%, 100%);
 	--lightGrayishViolet: hsl(270, 20%, 96%);
-	--veryDarkDesaturatedViolet: hsl(271, 36%, 24%);
+	--lightGrey: hsl(0, 0%, 94%);
 	--veryLightMagenta: hsl(289, 100%, 72%);
 }
 
+/* Canvas */
+
+.page {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.canvas {
+	background: var(--white);
+	max-width: 90%;
+	box-shadow: 0 0 40px rgba(0,0,0,.2);
+	position: relative;
+	overflow: hidden;
+}
+
+.canvas:before,
+.canvas:after {
+	content: "";
+	display: block;
+    position: absolute; 
+    height: 600px; 
+    width: 400px; 
+    border-bottom-left-radius: 200px;
+    border-bottom-right-radius: 200px;
+    background: linear-gradient(190deg, var(--lightMagenta) 0%, var(--lightViolet) 100%);
+}
+
+.canvas:before {
+	margin-left: -40px;
+}
+
+.canvas:after {
+	transform: rotate(180deg);
+	bottom: 0;
+	right: 0;
+	margin-right:-40px;
+	opacity: .05;
+}
+
+/* App */
+
+.appWrap {
+	position: relative;
+	z-index: 1;
+	padding: 5em 15em;
+	display: grid;
+	grid-template-columns: 300px 400px;
+	grid-gap: 6em;
+	align-items: center;
+}
+
+.appInfo h1 {
+	color: var(--veryDarkDesaturatedViolet);
+}
+
+.appInfo p {
+	color: var(--darkGrayishViolet);
+	line-height: 1.5;
+}
+
+.phone {
+	width: 300px;
+	height: 600px;
+	padding: .75em;
+	background: var(--white);
+	border-radius: 1em;
+	box-shadow: 0 30px 40px rgba(0,0,0,.3);
+	overflow: hidden;
+}
+
+.phone .header {
+	background: linear-gradient(190deg, var(--lightMagenta) 0%, var(--lightViolet) 100%);
+	border-radius: 1em 1em .2em .2em;
+}
+
+.phone .header:before {
+	content: "";
+	display: block;
+	width: 60%;
+	height: 20px;
+	background: var(--white);
+	margin: auto;
+	border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+.walkerInfo img {
+	border-radius: 100%;
+	width: 40px;
+	border: 2px solid var(--white);
+}
+
 /* Helpers */
+
 .hidden {
 	display: none;
 }
