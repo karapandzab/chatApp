@@ -32,7 +32,7 @@ img {
 
 :root {
 	/*text*/
-	--paleViolet: hsl(276, 100%, 81%);
+	--paleViolet: hsl(276, 100%, 93%);
 	--moderateViolet: hsl(276, 55%, 52%);
 	--desaturatedDarkViolet: hsl(271, 15%, 43%);
 	--grayishBlue: hsl(206, 6%, 79%);
@@ -91,7 +91,7 @@ img {
 	opacity: .05;
 }
 
-/* App */
+/* App > header */
 
 .appWrap {
 	position: relative;
@@ -125,6 +125,16 @@ img {
 .phone .header {
 	background: linear-gradient(190deg, var(--lightMagenta) 0%, var(--lightViolet) 100%);
 	border-radius: .75em .75em .2em .2em;
+	box-shadow: 0 5px 6px rgba(0,0,0,.2);	
+	display: grid;
+    grid-template-columns: 6fr 1fr;
+    align-items: center;
+    position: relative;
+    padding-top: 20px;
+}
+
+.phone .header > * {
+	padding: 15px;
 }
 
 .phone .header:before {
@@ -133,19 +143,125 @@ img {
 	width: 60%;
 	height: 20px;
 	background: var(--white);
-	margin: auto;
+	position: absolute;
+	top: 0;
+	left:50%;
+	transform: translateX(-50%);
 	border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
 }
 
-.walkerInfo img {
+.phone .header > *,
+.phone .walkerInfo > * {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.avatar {
+	position: relative;
+}
+
+.avatar img {
 	border-radius: 100%;
 	width: 40px;
 	border: 2px solid var(--white);
+	margin: 0 5px 0 12px;
+}
+
+.avatar:before {
+    content: "";
+    display: block;
+    line-height: 1;
+    font-size: 1.2em;
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-left-color: transparent;
+    border-top-color: transparent;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+    left: 0;
+    color: var(--white);
+}
+
+.nameAvailability {
+	font-size: .75em;
+}
+
+.nameAvailability * {
+	margin: 0;
+}
+
+.nameAvailability h3 {
+	color: var(--white);
+}
+
+.nameAvailability h4 {
+	color: var(--veryLightMagenta);
+	font-weight: normal;
+}
+
+.walkerExtra {
+	text-align: right;
+}
+
+a.extra {
+	color: var(--white);
+}
+
+a.extra:before {
+    content: ":";
+    position: absolute;
+    margin-top: -6px;
+}
+
+/* App > chat */
+
+.chat {
+	display: grid;
+	padding: 10px;
+	font-size:.8em;
+}
+
+.walkerChat,
+.userChat {
+	max-width:80%;
+	padding: 10px;
+	border-radius: 15px;
+	margin-bottom:10px;
+}
+
+.walkerChat {
+	box-shadow: unset;
+	background: var(--paleViolet);
+	color: var(--moderateViolet);
+	border-bottom-left-radius: 3px;
+}
+
+.userChat {
+	box-shadow: 0 5px 10px rgba(0,0,0,.15);
+	border-bottom-right-radius: 3px;
+}
+
+.imageOnly {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	grid-gap: 10px;
+	padding: 0;
+	box-shadow: unset;
+}
+
+.imageOnly img {
+	border-radius: 10px;
 }
 
 /* Helpers */
 
 .hidden {
 	display: none;
+}
+
+.noUnderline {
+	text-decoration: none;
 }
