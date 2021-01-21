@@ -5,12 +5,12 @@ html {
 	-webkit-text-size-adjust: 100%; 
 	-ms-text-size-adjust: 100%;
 	box-sizing: border-box;
-	font-family: 'Rubik', sans-serif;
 	background: var(--lightGrey);
 }
 
 *, *:before, *:after {
 	box-sizing: inherit;
+	font-family: 'Rubik', sans-serif;	
 }
 
 body, ol, ul {
@@ -48,23 +48,19 @@ img {
 	--lightGrayishViolet: hsl(270, 20%, 96%);
 	--lightGrey: hsl(0, 0%, 94%);
 	--veryLightMagenta: hsl(289, 100%, 72%);
+
+	/*border radis*/
+	--appCurve: 15px;
 }
 
 /* Canvas */
 
-.page {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-}
-
 .canvas {
 	background: var(--white);
-	max-width: 90%;
-	box-shadow: 0 0 40px rgba(0,0,0,.2);
-	position: relative;
-	overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,0,0,.2);
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
 }
 
 .canvas:before,
@@ -74,8 +70,8 @@ img {
     position: absolute; 
     height: 600px; 
     width: 400px; 
-    border-bottom-left-radius: 200px;
-    border-bottom-right-radius: 200px;
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
     background: linear-gradient(190deg, var(--lightMagenta) 0%, var(--lightViolet) 100%);
 }
 
@@ -94,13 +90,15 @@ img {
 /* App > header */
 
 .appWrap {
-	position: relative;
 	z-index: 1;
-	padding: 5em 15em;
-	display: grid;
-	grid-template-columns: 300px 400px;
-	grid-gap: 6em;
-	align-items: center;
+    display: flex;
+    gap: 6em;
+    width: 60%;
+    align-items: center;
+    top: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 .appInfo h1 {
@@ -114,10 +112,10 @@ img {
 
 .phone {
 	width: 300px;
-	height: 600px;
+	height: 615px;
 	background: var(--lightGrayishViolet);
 	border: .75em solid var(--white);
-	border-radius: 1em;
+	border-radius: 2.5em;
 	box-shadow: 0 30px 40px rgba(0,0,0,.3);
 	overflow: hidden;
 }
@@ -219,14 +217,34 @@ a.extra:before {
 /* App > chat */
 
 .chat {
-	display: grid;
 	padding: 10px;
 	font-size:.8em;
+	height: 319px;
+    overflow: auto;
+}
+
+.walkerWrap {
+	padding-right: 20%;
+}
+
+.userWrap {
+	padding-left: 20%; 
+	text-align: right;
+}
+
+.walkerWrap > *,
+.userWrap > * {
+	display: inline-block;
+	text-align: left;
+}
+
+.userWrap {
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 .walkerChat,
 .userChat {
-	max-width:80%;
 	padding: 10px;
 	border-radius: 15px;
 	margin-bottom:10px;
@@ -240,20 +258,96 @@ a.extra:before {
 }
 
 .userChat {
-	box-shadow: 0 5px 10px rgba(0,0,0,.15);
+	box-shadow: 0 3px 7px rgba(0,0,0,.1);
 	border-bottom-right-radius: 3px;
 }
 
 .imageOnly {
-	display: grid;
-	grid-template-columns: repeat(3, auto);
-	grid-gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    flex-flow: row-reverse;
 	padding: 0;
 	box-shadow: unset;
 }
 
 .imageOnly img {
 	border-radius: 10px;
+	width: 55px;
+}
+
+/* App > rate */
+
+form.pricing {
+	padding-left: 10px;
+	font-size: .8em;
+}
+
+.rate {
+	background: linear-gradient(9deg, var(--lightMagenta) 0%, var(--lightViolet) 100%);
+	color: var(--white);
+	margin: 10px 25% 10px 0;
+	padding: 10px;
+	border-radius: 15px;
+	border-bottom-left-radius: 3px;
+}
+
+.rate label {
+	display: inline-grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 20px;
+}
+
+.rate label span {
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+/* App > send */
+
+.sendWrap {
+	display: grid;
+    grid-template-columns: 6fr 1fr;
+    grid-gap: 5px;
+	margin: 10px;
+	padding: 10px;
+	background: var(--white);
+	border-radius: 100px;
+}
+
+.sendWrap input {
+	border: 0;
+	padding: 5px;
+}
+
+.sendWrap button {
+	background: var(--veryDarkDesaturatedViolet);
+    border: 0;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    position: relative;
+}
+
+.sendWrap button:before,
+.sendWrap button:after {
+	content: "";
+	position: absolute;
+	background: var(--white);
+	height: 2px;
+	width: 8px;
+}
+
+.sendWrap button:before {
+	transform: rotate(45deg);
+	top: 11px;
+    left: 12px;	
+}
+
+.sendWrap button:after {
+	transform: rotate(135deg);
+    top: 16px;
+    left: 12px;	
 }
 
 /* Helpers */
