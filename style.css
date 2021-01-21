@@ -31,7 +31,7 @@ img {
 /* Colors */
 
 :root {
-	/*text*/
+	/*text colors*/
 	--paleViolet: hsl(276, 100%, 93%);
 	--moderateViolet: hsl(276, 55%, 52%);
 	--desaturatedDarkViolet: hsl(271, 15%, 43%);
@@ -49,8 +49,12 @@ img {
 	--lightGrey: hsl(0, 0%, 94%);
 	--veryLightMagenta: hsl(289, 100%, 72%);
 
-	/*border radis*/
-	--appCurve: 15px;
+	/*border radius*/
+	--appCurve: 2.5em;
+
+	/*text size*/
+	--regularText: .9em;
+	--mediumText: 1.1em;
 }
 
 /* Canvas */
@@ -68,39 +72,43 @@ img {
 	content: "";
 	display: block;
     position: absolute; 
-    height: 600px; 
-    width: 400px; 
-    border-bottom-left-radius: 250px;
-    border-bottom-right-radius: 250px;
+    height: 700px;
+    width: max(35%, 300px);
+    border-bottom-left-radius: 320px;
+    border-bottom-right-radius: 380px;
     background: linear-gradient(190deg, var(--lightMagenta) 0%, var(--lightViolet) 100%);
 }
 
 .canvas:before {
-	margin-left: -40px;
+	transform:translateX(-40px);
+	top:0;
 }
 
 .canvas:after {
-	transform: rotate(180deg);
+	transform: rotate(180deg) translateX(-40px);
 	bottom: 0;
 	right: 0;
-	margin-right:-40px;
 	opacity: .05;
 }
 
 /* App > header */
 
 .appWrap {
-	z-index: 1;
     display: flex;
-    gap: 6em;
-    width: 60%;
     align-items: center;
-    top: 50%;
+    gap: 6vw;
+    width: min(100%, 900px);
+    padding: 30px;
     position: absolute;
-    left: 50%;
+	z-index: 1;
+    top: 50%;
+	left: 50%;
     transform: translate(-50%,-50%);
 }
 
+.appInfo {
+	font-size: var(--mediumText);
+}
 .appInfo h1 {
 	color: var(--veryDarkDesaturatedViolet);
 }
@@ -108,6 +116,7 @@ img {
 .appInfo p {
 	color: var(--darkGrayishViolet);
 	line-height: 1.5;
+	margin: 0;
 }
 
 .phone {
@@ -115,8 +124,8 @@ img {
 	height: 615px;
 	background: var(--lightGrayishViolet);
 	border: .75em solid var(--white);
-	border-radius: 2.5em;
-	box-shadow: 0 30px 40px rgba(0,0,0,.3);
+	border-radius: var(--appCurve);
+	box-shadow: 0 30px 45px rgba(0,0,0,.3);
 	overflow: hidden;
 }
 
@@ -184,7 +193,7 @@ img {
 }
 
 .nameAvailability {
-	font-size: .75em;
+	font-size: var(--regularText);
 }
 
 .nameAvailability * {
@@ -218,7 +227,7 @@ a.extra:before {
 
 .chat {
 	padding: 10px;
-	font-size:.8em;
+	font-size: var(--regularText);
 	height: 319px;
     overflow: auto;
 }
@@ -280,11 +289,11 @@ a.extra:before {
 
 form.pricing {
 	padding-left: 10px;
-	font-size: .8em;
+	font-size: var(--regularText);
 }
 
 .rate {
-	background: linear-gradient(9deg, var(--lightMagenta) 0%, var(--lightViolet) 100%);
+	background: linear-gradient(45deg, var(--lightMagenta) 0%, var(--lightViolet) 100%);
 	color: var(--white);
 	margin: 10px 25% 10px 0;
 	padding: 10px;
@@ -318,6 +327,7 @@ form.pricing {
 .sendWrap input {
 	border: 0;
 	padding: 5px;
+	font-size: var(--regularText);
 }
 
 .sendWrap button {
@@ -348,6 +358,24 @@ form.pricing {
 	transform: rotate(135deg);
     top: 16px;
     left: 12px;	
+}
+
+@media screen and (max-width: 640px) {
+
+	.canvas:before, .canvas:after {
+	    height: 500px;
+	    border-bottom-left-radius: 0;
+	}
+	
+	.appWrap {
+		flex-flow: column;
+		gap:2em;
+	}
+
+	.appInfo {
+		width: min(100%, 450px);
+		text-align: center;
+	}
 }
 
 /* Helpers */
