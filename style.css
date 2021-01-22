@@ -108,6 +108,7 @@ img {
 }
 .appInfo h1 {
 	color: var(--veryDarkDesaturatedViolet);
+	font-weight: 500;
 }
 
 .appInfo p {
