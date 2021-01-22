@@ -131,7 +131,7 @@ img {
 	border-radius: .75em .75em .2em .2em;
 	box-shadow: 0 5px 6px rgba(0,0,0,.2);	
 	display: grid;
-    grid-template-columns: 6fr 1fr;
+    grid-template-columns: 4fr 1fr;
     align-items: center;
     position: relative;
     padding-top: 20px;
@@ -208,6 +208,8 @@ img {
 
 .walkerExtra {
 	text-align: right;
+	justify-self: start;
+	position: relative;
 }
 
 a.extra {
@@ -219,6 +221,48 @@ a.extra:before {
     position: absolute;
     margin-top: -6px;
 }
+
+/* Walker modal window options */
+
+.modal-window {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  width: 95px;
+  padding: 1em;
+  background: var(--white);
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  border-radius: 6px;
+  box-shadow:0 5px 10px rgba(0,0,0,.2);
+}
+
+.modal-window:target {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-window li {
+	padding: 7px 0;
+}
+
+.modal-window li a {
+	color: var(--lightViolet);
+	text-decoration: none;
+}
+
+.modal-window ul li:first-child {
+	margin-top: 10px;
+}
+
+.modal-close {
+  text-decoration: none;
+  font-size: .75em;
+  color: var(--veryLightMagenta);
+}
+
 
 /* App > chat */
 
