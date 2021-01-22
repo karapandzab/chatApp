@@ -25,7 +25,6 @@ ol, ul {
 
 img {
 	max-width: 100%;
-	height: auto;
 }
 
 /* Colors */
@@ -101,6 +100,7 @@ img {
     max-width: 900px;
     padding: 30px;
     position: relative;
+    z-index: 1;
 }
 
 .appInfo {
@@ -122,13 +122,13 @@ img {
 	background: var(--lightGrayishViolet);
 	border: .75em solid var(--white);
 	border-radius: var(--appCurve);
-	box-shadow: 0 30px 45px rgba(0,0,0,.3);
+	box-shadow: 0 20px 45px rgba(0,0,0,.3);
 	overflow: hidden;
 }
 
 .phone .header {
 	background: linear-gradient(190deg, var(--lightMagenta) 0%, var(--lightViolet) 100%);
-	border-radius: .75em .75em .2em .2em;
+	border-radius: 2em 2em .2em .2em;
 	box-shadow: 0 5px 6px rgba(0,0,0,.2);	
 	display: grid;
     grid-template-columns: 4fr 1fr;
