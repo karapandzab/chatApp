@@ -320,16 +320,19 @@ a.extra:before {
 
 .imageOnly {
     display: flex;
-    flex-wrap: wrap;
-    gap: 13px;
     flex-flow: row-reverse;
+    flex-wrap: wrap;
 	padding: 0;
 	box-shadow: unset;
 }
 
+.userMedia {
+	width: 30%;
+    margin: 0 0 3.33% 3.33%;
+}
+
 .imageOnly img {
 	border-radius: 10px;
-	width: 55px;
 }
 
 /* App > rate */
@@ -408,7 +411,6 @@ form.pricing {
 }
 
 @media screen and (max-width: 640px) {
-
 	.canvas {
 		height: auto;
 	}
@@ -426,6 +428,10 @@ form.pricing {
 	.appInfo {
 		width: min(100%, 450px);
 		text-align: center;
+	}
+
+	.sendWrap input {
+		font-size: 1em;
 	}
 }
 
