@@ -14,9 +14,9 @@
       <div class="appWrap">
         <div class="appVisual">
           <div class="phone">
-            <section class="header">
+            <div class="header">
               <div class="walkerInfo">
-                <a class="avatar noUnderline" href="#"><img src="./images/avatar.jpg"></a>                
+                <a class="avatar noUnderline" href="#"><img src="./images/avatar.jpg" alt="Mr. Samuel"></a>                
                 <div class="nameAvailability">
                   <h3>Samuel Green</h3>
                   <h4>Available to walk</h4>
@@ -33,17 +33,17 @@
                   </ul>
                 </div>
               </div>
-            </section>
-            <section class="chat">
+            </div>
+            <div class="chat">
               <div class="walkerWrap">
                 <div class="walkerChat">That sounds great. I`d be happy to discuss more.</div>
                 <div class="walkerChat">Could you send over some photos of your dog, please?</div>
               </div>
               <div class="userWrap">
                 <div class="userChat imageOnly">
-                  <div class="userMedia"><img src="./images/dog-image-1.jpg"></div>
-                  <div class="userMedia"><img src="./images/dog-image-2.jpg"></div>
-                  <div class="userMedia"><img src="./images/dog-image-3.jpg"></div>
+                  <div class="userMedia"><img src="./images/dog-image-1.jpg" alt="Doggy 1"></div>
+                  <div class="userMedia"><img src="./images/dog-image-2.jpg" alt="Doggy 2"></div>
+                  <div class="userMedia"><img src="./images/dog-image-3.jpg" alt="Doggy 3"></div>
                 </div>
                 <div class="userChat">Here are a few images. She`s a happy girl.</div>
                 <div class="userChat">Can you make it?</div>
@@ -51,21 +51,27 @@
               <div class="walkerWrap">
                 <div class="walkerChat">She looks so happy! The time we discussed works. How long shall I take her out for?</div>
               </div>
-            </section>
-            <form class="pricing">
-              <div class="rate">
-                <input type="radio" name="walkPrice" id="half"><label for="half">30 minute walk <span>$29</span></label>
-              </div>
-              <div class="rate">
-                <input type="radio" name="walkPrice" id="hour"><label for="hour">1 hour walk <span>$49</span></label>
-              </div>
-            </form>            
-            <section class="send">
+            </div>
+            <div class="pricing">
+              <ul class="rate">
+                <li></li>
+                <li>30 minute walk</li>
+                <li>$29</li>
+              </ul>
+              <ul class="rate">
+                <li></li>
+                <li>1 hour walk</li>
+                <li>$49</li>
+              </ul>
+            </div>            
+            <div class="send">
               <div class="sendWrap">
-                <input type="text" name="" placeholder="Type a message...">
-                <button></button>
+                <form>
+                  <input type="text" name="userText" placeholder="Type a message...">
+                  <button type="submit" value="Submit"></button>
+                </form>
               </div>
-            </section>
+            </div>
           </div>
         </div>
         <div class="appInfo">

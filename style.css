@@ -52,7 +52,7 @@ img {
 	--appCurve: 2.5em;
 
 	/*text size*/
-	--regularText: .9em;
+	--regularText: .7em;
 	--mediumText: 1.1em;
 }
 
@@ -118,7 +118,7 @@ img {
 
 .phone {
 	width: 300px;
-	height: 615px;
+	height: 655px;
 	background: var(--lightGrayishViolet);
 	border: .75em solid var(--white);
 	border-radius: var(--appCurve);
@@ -127,7 +127,7 @@ img {
 }
 
 .phone .header {
-	background: linear-gradient(190deg, var(--lightMagenta) 0%, var(--lightViolet) 100%);
+	background: linear-gradient(-60deg, var(--lightMagenta) 0%, var(--lightViolet) 100%);
 	border-radius: 2em 2em .2em .2em;
 	box-shadow: 0 5px 6px rgba(0,0,0,.2);	
 	display: grid;
@@ -183,14 +183,14 @@ img {
 }
 
 .avatar:before{
-	transform: rotate(-45deg);
+	transform: rotate(-55deg);
 	top: 16px;
     left: 0;	
 }
 
 .avatar:after {
-	transform: rotate(45deg);
-    top: 21px;
+	transform: rotate(55deg);
+    top: 22px;
     left: 0;	
 }
 
@@ -275,8 +275,10 @@ a.extra:before {
 .chat {
 	padding: 10px;
 	font-size: var(--regularText);
-	height: 319px;
-    overflow: auto;
+}
+
+.chat > *:last-child > * {
+	margin-bottom: 0;
 }
 
 .walkerWrap {
@@ -295,8 +297,8 @@ a.extra:before {
 }
 
 .userWrap {
-	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .walkerChat,
@@ -328,7 +330,7 @@ a.extra:before {
 
 .userMedia {
 	width: 30%;
-    margin: 0 0 3.33% 3.33%;
+    margin-left: 3.33%;
 }
 
 .imageOnly img {
@@ -337,34 +339,39 @@ a.extra:before {
 
 /* App > rate */
 
-form.pricing {
+.pricing {
 	padding-left: 10px;
 	font-size: var(--regularText);
 }
 
 .rate {
-	background: linear-gradient(45deg, var(--lightMagenta) 0%, var(--lightViolet) 100%);
-	color: var(--white);
+	background: linear-gradient(90deg, var(--lightMagenta) 0%, var(--lightViolet) 100%);
+	color: var(--white);	
 	margin: 10px 25% 10px 0;
 	padding: 10px;
 	border-radius: 15px;
 	border-bottom-left-radius: 3px;
+	display: grid;
+    grid-template-columns: 20px 2fr 1fr;
+    align-items: center;	
 }
 
-.rate label {
-	display: inline-grid;
-    grid-template-columns: 3fr 1fr;
-    grid-gap: 20px;
+.rate li:nth-child(1) {
+	width: 14px;
+    height: 14px;
+    border: 1px solid var(--white);
+    opacity: .7;
+    border-radius: 12px;
 }
 
-.rate label span {
+.rate li:nth-child(3) {
 	font-weight: bold;
 	font-size: 1.2em;
 }
 
 /* App > send */
 
-.sendWrap {
+.sendWrap form {
 	display: grid;
     grid-template-columns: 6fr 1fr;
     grid-gap: 5px;
