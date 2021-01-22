@@ -60,8 +60,9 @@ img {
 /* Canvas */
 
 .canvas {
+	display: grid;
+    place-content: center;	
 	background: var(--white);
-    box-shadow: 0 0 40px rgba(0,0,0,.2);
     position: relative;
     overflow: hidden;
     height: 100vh;
@@ -94,16 +95,12 @@ img {
 /* App > header */
 
 .appWrap {
-    display: flex;
+	display: flex;
     align-items: center;
     gap: 6vw;
-    width: min(100%, 900px);
+    max-width: 900px;
     padding: 30px;
-    position: absolute;
-	z-index: 1;
-    top: 50%;
-	left: 50%;
-    transform: translate(-50%,-50%);
+    position: relative;
 }
 
 .appInfo {
